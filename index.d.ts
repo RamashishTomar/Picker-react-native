@@ -61,8 +61,7 @@ declare module "react-native-dropdown-picker" {
     arrowColor?: string;
     arrowSize?: number;
     showArrow?: boolean;
-    customArrowUp: ImageSourcePropType;
-    customArrowDown: ImageSourcePropType;
+    customArrowDown?: ImageSourcePropType;
     customTickIcon: ImageSourcePropType;
     zIndex?: number;
     zIndexInverse?: number;
@@ -97,7 +96,6 @@ declare module "react-native-dropdown-picker" {
     onChangeItemMultiple?: (item: any) => void;
     onChangeList?: (items: any, callback: () => void) => void;
     renderSeperator?: () => JSX.Element;
-    arrowUpStyle?: ImageStyle;
     arrowDownStyle?: ImageStyle;
   };
   const DropDownPicker: ComponentType<DropDownPickerProps>;

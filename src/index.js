@@ -709,15 +709,13 @@ class DropDownPicker extends React.Component {
           {this.props.showArrow && (
             <View style={[styles.arrow]}>
               <View style={[this.props.arrowStyle, { opacity }]}>
-                {!this.state.isVisible
-                  ? this.props.customArrowDown(
-                      this.props.arrowSize,
-                      this.props.arrowColor
-                    )
-                  : this.props.customArrowUp(
-                      this.props.arrowSize,
-                      this.props.arrowColor
-                    )}
+                <Image
+                  source={this.props.customArrowDown}
+                  style={[
+                    { height: 20, width: 20, resizeMode: "contain" },
+                    this.props.arrowDownStyle,
+                  ]}
+                />
               </View>
             </View>
           )}
@@ -807,20 +805,8 @@ DropDownPicker.defaultProps = {
   arrowColor: "#000",
   showArrow: true,
   arrowSize: 15,
-  customArrowUp: () => (
-    <Image
-      source={props.customArrowUp}
-      style={[{ height: 20, width: 20, resizeMode: "contain" }, arrowUpStyle]}
-      color={color}
-    />
-  ),
-  customArrowDown: () => (
-    <Image
-      source={props.customArrowDown}
-      style={[{ height: 20, width: 20, resizeMode: "contain" }, arrowDownStyle]}
-      color={color}
-    />
-  ),
+
+  customArrowDown: () => require("./downArrow.png"),
   customTickIcon: () => <Image source={props.customTickIcon} size={15} />,
   zIndex: 5000,
   zIndexInverse: 6000,
